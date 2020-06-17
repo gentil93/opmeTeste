@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2016",
+      "es2017",
+      "es2018"
     ],
+    "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,5 +28,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "./paths.tsconfig.json"
 }

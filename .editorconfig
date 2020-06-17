@@ -1,0 +1,14 @@
+# top-most EditorConfig file
+root = true
+
+# General styles
+[*]
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+# Indentation
+[*.{json,js,scss,ts,tsx}]
+indent_style = space
+indent_size = 4
