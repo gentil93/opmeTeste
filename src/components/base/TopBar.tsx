@@ -26,7 +26,6 @@ const TopBar: FC = ({
     const { session, setSession } = useContext(SessionContext) || { session: null, setSession: null };
 
     const onLogoutClick = () => {
-        console.log('ha')
         setSession?.(null)
     }
 
@@ -35,7 +34,7 @@ const TopBar: FC = ({
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h4" color="secondary" className={ styles.title }>
-                        Gestão OPME
+                        GITHUB TESTE
                     </Typography>
                     <Button color="secondary" onClick={onLogoutClick}>Logout</Button>
                 </Toolbar>
