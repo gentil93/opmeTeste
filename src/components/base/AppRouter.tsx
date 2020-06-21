@@ -1,8 +1,9 @@
 import TopBar from 'components/base/TopBar';
 import TokenView from 'components/views/TokenView';
+import UserDetailsView from 'components/views/UserDetailsView';
 import UsersView from 'components/views/UsersView';
 import SessionContext, { Session } from 'contexts/SessionContext';
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Routes } from 'utils/Routes';
 
@@ -26,7 +27,13 @@ const AppRouter = () => {
             key={ `/${Routes.UsersList}` }
         >
             <UsersView />
-        </Route>
+        </Route>,
+        <Route
+            path={ `/${Routes.UserDetails}` }
+            key={ `/${Routes.UserDetails}` }
+        >
+        <UserDetailsView />
+    </Route>
     ]
 
     return (

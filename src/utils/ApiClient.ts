@@ -36,9 +36,27 @@ const getUsers = async (since: number) => {
     }
 }
 
+const getUserDetail = async (username: string) => {
+    try {
+        return await axiosInstance.get(`/users/${username}`)
+    } catch (e) {
+        throw e
+    }
+}
+
+const getUserRepos = async (username: string) => {
+    try {
+        return await axiosInstance.get(`/users/${username}/repos`)
+    } catch (e) {
+        throw e
+    }
+}
+
 export {
     setToken,
     clearToken,
     getGithubAPI,
-    getUsers
+    getUsers,
+    getUserDetail,
+    getUserRepos
 }

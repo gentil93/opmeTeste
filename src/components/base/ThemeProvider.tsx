@@ -5,7 +5,7 @@ import { SpacingOptions } from '@material-ui/core/styles/createSpacing';
 import { TypographyOptions } from '@material-ui/core/styles/createTypography';
 import React from 'react';
 
-const spacing: SpacingOptions = factor => [0, 4, 8, 12, 16, 24, 32, 40, 48, 60, 64][factor];
+const spacing: SpacingOptions = factor => [0, 4, 8, 12, 16, 24, 32, 40, 48, 60, 64, 180][factor];
 
 const primary: SimplePaletteColorOptions = {
     main: '#009FE3'
@@ -40,7 +40,7 @@ export const typography: TypographyOptions = {
     h1: {
         fontWeight: 'bold',
         fontStyle: 'normal',
-        fontSize: '40px',
+        fontSize: '32px',
         letterSpacing: '0.15px',
         fontFamily: 'Roboto'
     },

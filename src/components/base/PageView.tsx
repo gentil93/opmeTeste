@@ -8,14 +8,18 @@ interface PageViewProps {
     pageClassName?: string;
 }
 
-const useStyles = makeStyles(({ spacing }: Theme) =>
+const useStyles = makeStyles(({ spacing, breakpoints }: Theme) =>
     createStyles({
         pageContainer: {
             padding: spacing(0, 6),
             width: '100%',
-            height: 'auto',
+            height: '100vh',
+            overflow: 'auto',
             minHeight: '100%',
-            backgroundColor: '#EDF0F2'
+            backgroundColor: '#EDF0F2',
+            [breakpoints.up('md')]: {
+                padding: spacing(0, 11),
+            }
         }
     })
 );

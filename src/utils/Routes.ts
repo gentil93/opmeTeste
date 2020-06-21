@@ -1,6 +1,7 @@
 enum Routes {
     Token = 'token',
-    UsersList = 'users'
+    UsersList = 'users',
+    UserDetails='user/:username'
 }
 
 export { Routes }

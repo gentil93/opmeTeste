@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Collapse, createStyles, Grid, makeStyles, TextField, Theme } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
+import Link from 'components/base/Link';
 import Logo from 'components/base/Logo';
 import SessionContext from 'contexts/SessionContext';
 import React, { ChangeEvent, FormEvent, useContext, useState } from 'react';
@@ -86,6 +87,14 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.down('xs')]: {
                 height: '70px'
             }
+        },
+        link: {
+            width: 'fit-content',
+            color: theme.palette.primary.main,
+            textDecoration: 'none',
+            '&:hover': {
+                textDecoration: 'underline'
+            }
         }
     })
 );
@@ -115,7 +124,7 @@ const TokenView = () => {
         e.preventDefault()
 
         try {
-            const res = await getGithubAPI(token)
+            await getGithubAPI(token)
             setSession?.({
                 token
             })
@@ -125,7 +134,7 @@ const TokenView = () => {
                 if (e.response.data.message === "Bad credentials")
                     setError('Token inválido')
             } else {
-                setError('Problema no servidor por favor tente novamente')
+                setError('Problema no servidor tente novamente')
             }
         }
 
@@ -165,7 +174,7 @@ const TokenView = () => {
                             </div>
 
                             <div className={ styles.accessText }>
-                                Por favor insira seu token do github
+                                Insira seu token do github
                             </div>
 
                             { alert }
@@ -181,12 +190,18 @@ const TokenView = () => {
                                 />
                             </div>
 
+                            <Link
+                                href="https://github.com/settings/tokens"
+                                target="_blank"
+                                text="Não tenho token"
+                            />
+
                             <div className={ styles.loginButtonContainer }>
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    disabled={ false }
                                     type="submit"
+                                    disabled={!token}
                                 >
                                     Entrar
                                 </Button>
