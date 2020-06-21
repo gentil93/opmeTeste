@@ -6,7 +6,7 @@ import Table, { RowWithID } from 'components/interfaces/Table';
 import { format } from 'date-fns';
 import { Repositorie, UserDetails } from 'models/Interfaces';
 import React, { FC, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getUserDetail, getUserRepos } from 'utils/ApiClient';
 import { Routes } from 'utils/Routes';
 
@@ -17,7 +17,8 @@ interface InfoCellProps {
 
 const useStyles = makeStyles(({
     spacing,
-    breakpoints
+    breakpoints,
+    palette
 }) =>
     createStyles({
         detailsPaperRoot: {
@@ -39,6 +40,7 @@ const useStyles = makeStyles(({
             [breakpoints.down('sm')]: {
                 height: 'calc(100vh - 550px)',
             },
+            minHeight: '400px'
         },
         tableContainer: {
             overflow: 'auto',
@@ -99,6 +101,14 @@ const useStyles = makeStyles(({
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis'
+        },
+        link: {
+            width: 'fit-content',
+            color: palette.primary.main,
+            textDecoration: 'none',
+            '&:hover': {
+                textDecoration: 'underline'
+            }
         }
     })
 );
@@ -219,7 +229,7 @@ const UserDetailsView = () => {
                 href={ user?.html_url }
                 text={ user?.html_url }
                 target="_blank"
-                className={styles.linkStyle}
+                className={ styles.linkStyle }
             />
         </InfoCell>
     ) : <InfoCell title="URL" value="Não definido" />
@@ -251,10 +261,10 @@ const UserDetailsView = () => {
     )
 
     return (
-        <div className={styles.pageWrapper}>
-            <Breadcrumbs aria-label="breadcrumb" classes={breadCrumbClasses}>
-                <CustomLink href={`/${Routes.UsersList}`} text={"Usuários"} />
-            <Typography color="textPrimary">{user?.name}</Typography>
+        <div className={ styles.pageWrapper }>
+            <Breadcrumbs aria-label="breadcrumb" classes={ breadCrumbClasses }>
+                <Link className={`${styles.link}`} to={ `/${Routes.UsersList}` } >Usuários</Link>
+                <Typography color="textPrimary">{ user?.name }</Typography>
             </Breadcrumbs>
             <PageView title="Detalhes de usuário">
                 <Paper classes={ detailsPaperClasses }>

@@ -25,10 +25,6 @@ Front-End para consultas de usuários utilizando a API do github
 
 2. Para verificar entre no dominio `localhost:3000`
 
-## Rodando os Testes
-
-1. Para rodar os testes utilize o comando `npm test`
-
 ## Deployment
 
 1. Para gerar os arquivos estáticos do projeto, utilize o comando `npm run build` na raiz do projeto
