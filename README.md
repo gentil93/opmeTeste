@@ -1,34 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Teste Gestão OPME
 
-## Available Scripts
+Front-End para consultas de usuários utilizando a API do github
 
-In the project directory, you can run:
+## Tecnologias Utilizadas
 
-### `yarn start`
+-   [CRA](https://github.com/facebook/create-react-app)
+-   [React](https://reactjs.org/)
+-   [Typescript](https://www.typescriptlang.org/)
+-   [MaterialUI](https://material-ui.com/)
+-   [Axios](https://github.com/axios/axios)
+-   [Jest](https://jestjs.io/en/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Pré requisitos
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Para instalar o projeto é necessário possuir npm
 
-### `yarn test`
+### Instalação
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Entre na pasta do projeto e baixe as dependências utilizando `npm i`
 
-### `yarn build`
+## Rodando
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Na raiz do projeto rode `npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Para verificar entre no dominio `localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Rodando os Testes
 
-## Learn More
+1. Para rodar os testes utilize o comando `npm test`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Para gerar os arquivos estáticos do projeto, utilize o comando `npm run build` na raiz do projeto
+
+2. Sera gerado os arquivos estaticos dentro da raiz na pasta build
+
+3. Para rodar basta utilizar algum servidor http apontando para essa pasta
