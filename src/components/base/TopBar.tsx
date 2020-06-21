@@ -23,7 +23,7 @@ const TopBar: FC = ({
     children
 }) => {
     const styles = useStyles()
-    const { session, setSession } = useContext(SessionContext) || { session: null, setSession: null };
+    const { setSession } = useContext(SessionContext) || { session: null, setSession: null };
 
     const onLogoutClick = () => {
         setSession?.(null)

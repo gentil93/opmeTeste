@@ -91,6 +91,11 @@ const useStyles = makeStyles(({
         },
         pageWrapper: {
             paddingTop: spacing(2),
+        },
+        linkStyle: {
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
         }
     })
 );
@@ -211,6 +216,7 @@ const UserDetailsView = () => {
                 href={ user?.html_url }
                 text={ user?.html_url }
                 target="_blank"
+                className={styles.linkStyle}
             />
         </InfoCell>
     ) : <InfoCell title="URL" value="Não definido" />

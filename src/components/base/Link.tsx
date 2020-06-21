@@ -1,10 +1,12 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import clsx from 'clsx';
 import React from 'react';
 
 interface LinkProps {
     href: string;
     target?: string;
     text: string;
+    className?: string
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,14 +25,20 @@ const useStyles = makeStyles((theme: Theme) =>
 const Link = ({
     href,
     text,
-    target
+    target,
+    className = ''
 }: LinkProps) => {
     const styles = useStyles()
 
+    const aStyle = clsx(styles.link, {
+        [className]: !!className
+    })
+
     return (
         <a
-            className={ styles.link }
+            className={ aStyle }
             href={ href }
+            title={ text }
             target={ target }
         >
             { text }
