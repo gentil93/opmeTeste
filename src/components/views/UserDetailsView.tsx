@@ -34,7 +34,7 @@ const useStyles = makeStyles(({
             width: '100%',
             padding: spacing(6),
             display: 'flex',
-            height: 'calc(100vh - 535px)',
+            height: 'calc(100vh - 550px)',
             overflow: 'auto'
         },
         tableContainer: {
