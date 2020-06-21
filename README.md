@@ -23,12 +23,12 @@ Front-End para consultas de usuários utilizando a API do github
 
 1. Na raiz do projeto rode `npm start`
 
-2. Para verificar entre no dominio `localhost:3000`
+2. Para verificar entre no domínio `localhost:3000`
 
 ## Deployment
 
 1. Para gerar os arquivos estáticos do projeto, utilize o comando `npm run build` na raiz do projeto
 
-2. Sera gerado os arquivos estaticos dentro da raiz na pasta build
+2. Será gerado os arquivos estaticos dentro da raiz na pasta build
 
 3. Para rodar basta utilizar algum servidor http apontando para essa pasta
