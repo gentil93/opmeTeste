@@ -16,7 +16,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }: Theme) =>
             minHeight: '100%',
             backgroundColor: '#EDF0F2',
             [breakpoints.up('md')]: {
-                padding: spacing(0, 11),
+                padding: spacing(0, 11, 6),
             }
         }
     })
