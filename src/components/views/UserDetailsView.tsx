@@ -221,7 +221,7 @@ const UserDetailsView = () => {
         </InfoCell>
     ) : <InfoCell title="URL" value="Não definido" />
 
-    const details = loadingDetails ? loadingContainer : (
+    const details = !user?.id || loadingDetails ? loadingContainer : (
         <>
             <Avatar className={ styles.avatar } alt="User Avatar" src={ user?.avatar_url } />
             <div className={ styles.userInfo }>
@@ -237,7 +237,7 @@ const UserDetailsView = () => {
         </>
     )
 
-    const reposTable = loadingRepositories ? loadingContainer : (
+    const reposTable = !user?.id || loadingRepositories ? loadingContainer : (
         <Table
             headers={ tableHeaders }
             rows={ rows }
